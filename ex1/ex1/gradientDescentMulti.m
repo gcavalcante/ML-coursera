@@ -17,9 +17,33 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    s = zeros(m,1);
+    features = size(X, 2);
+    i = 1;
+    while i <= m
+        j = 1;
+        while j <= features
+            s(i,1) = s(i,1) + (theta(j,1) * X(i,j));
+            j = j+1;
+        end
+        i = i+1;
+    end
 
+    cost = 0;
+    j =1;
 
+    r = sum(s - y);
 
+    while j <= features
+        i = 1;
+        cost = 0;
+        while i <= m
+            cost = cost + ((s(i,1) -y(i,1)) * X(i,j));
+            i = i+1;
+        end
+        theta(j,1) =  theta(j,1) - ((alpha/m) * cost);
+        j = j+1;
+    end
 
 
 

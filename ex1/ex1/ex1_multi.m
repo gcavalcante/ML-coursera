@@ -104,7 +104,9 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+sigma
+theta
+price = 1*theta(1,1) + ((1650*mu(1,1))-sigma(1,1))*theta(2,1) + ((3*mu(1,2))-sigma(1,2))*theta(3,1); ; % You should change this
 
 
 % ============================================================
